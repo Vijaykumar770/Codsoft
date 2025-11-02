@@ -49,7 +49,7 @@ public class StudentManagementSystem {
 
         int choice;
         do {
-            System.out.println("\n===== 🎓 STUDENT MANAGEMENT SYSTEM =====");
+            System.out.println("\n===== STUDENT MANAGEMENT SYSTEM =====");
             System.out.println("1. Add Student");
             System.out.println("2. View All Students");
             System.out.println("3. Search Student");
@@ -66,11 +66,11 @@ public class StudentManagementSystem {
                 case 4 -> editStudent();
                 case 5 -> deleteStudent();
                 case 6 -> saveToFile();
-                default -> System.out.println("⚠ Invalid choice. Try again!");
+                default -> System.out.println(" Invalid choice. Try again!");
             }
         } while (choice != 6);
 
-        System.out.println("✅ Exiting... Data saved successfully!");
+        System.out.println(" Exiting... Data saved successfully!");
     }
 
     // --- Utility methods ---
@@ -93,12 +93,12 @@ public class StudentManagementSystem {
 
         students.add(new Student(name, roll, grade));
         saveToFile();
-        System.out.println("✅ Student added successfully!");
+        System.out.println(" Student added successfully!");
     }
 
     private static void viewStudents() {
         if (students.isEmpty()) {
-            System.out.println("📭 No students found!");
+            System.out.println(" No students found!");
             return;
         }
         System.out.println("\n--- Student List ---");
@@ -111,11 +111,11 @@ public class StudentManagementSystem {
 
         for (Student s : students) {
             if (s.getRollNumber() == roll) {
-                System.out.println("🔍 Found: " + s);
+                System.out.println(" Found: " + s);
                 return;
             }
         }
-        System.out.println("❌ Student not found!");
+        System.out.println(" Student not found!");
     }
 
     private static void editStudent() {
@@ -129,11 +129,11 @@ public class StudentManagementSystem {
                 System.out.print("Enter new grade: ");
                 s.setGrade(sc.nextLine());
                 saveToFile();
-                System.out.println("✅ Student updated successfully!");
+                System.out.println(" Student updated successfully!");
                 return;
             }
         }
-        System.out.println("❌ Student not found!");
+        System.out.println(" Student not found!");
     }
 
     private static void deleteStudent() {
@@ -145,11 +145,11 @@ public class StudentManagementSystem {
             if (it.next().getRollNumber() == roll) {
                 it.remove();
                 saveToFile();
-                System.out.println("🗑️ Student deleted successfully!");
+                System.out.println(" Student deleted successfully!");
                 return;
             }
         }
-        System.out.println("❌ Student not found!");
+        System.out.println(" Student not found!");
     }
 
     // --- File operations ---
@@ -164,7 +164,7 @@ public class StudentManagementSystem {
                 if (s != null) students.add(s);
             }
         } catch (IOException e) {
-            System.out.println("⚠️ Error loading data: " + e.getMessage());
+            System.out.println(" Error loading data: " + e.getMessage());
         }
     }
 
@@ -175,7 +175,8 @@ public class StudentManagementSystem {
                 bw.newLine();
             }
         } catch (IOException e) {
-            System.out.println("⚠️ Error saving data: " + e.getMessage());
+            System.out.println(" Error saving data: " + e.getMessage());
         }
     }
 }
+
